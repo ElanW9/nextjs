@@ -54,4 +54,11 @@ export async function getStaticProps() {
   ];
 
   const friends = nest(friendsData, friendsDefinition);
+
+  return {
+    props: {
+      friends,
+    },
+    revalidate: 60,
+  };
 }
